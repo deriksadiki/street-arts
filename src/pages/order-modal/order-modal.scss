@@ -1,11 +1,9 @@
 page-order-modal {
-
     .ordered{
         width: 100%;
         height: 250px;
         object-fit: cover
     }
-
     .theImage{
         position: relative;
     }
@@ -32,12 +30,11 @@ page-order-modal {
         // border: 2px solid pink;
         width: 100%;
         display: flex;
-
+        justify-content: flex-end;
     }
     .flexer{
         display: flex;
         width: 100%;
-
     }
     .spacer{
         // min-width: 20%;
@@ -69,15 +66,15 @@ page-order-modal {
         position: absolute;
         bottom: 0;
     }
-    .refSent{
-        color: grey;
-        font-style: italic;
-        font-size: 12px;
-        position: absolute;
-        bottom: 0;
-        text-align: right;
-        transform:rotateY(180deg);
-    }
+    // .refSent{
+    //     color: grey;
+    //     font-style: italic;
+    //     font-size: 12px;
+    //     position: absolute;
+    //     bottom: 0;
+    //     text-align: right;
+    //     transform:rotateY(180deg);
+    // }
     .wrapper{
         // display: flex;
         // flex-wrap: nowrap;
@@ -91,27 +88,81 @@ page-order-modal {
         margin-left: 10%;
     }
     .msgSent{
-        animation: 700ms fadeIn;
-        padding-left: 10px;  
-        padding-right: 10px;     
-        // padding-top: 5px;     
-        // padding-bottom: 5px;
-        display:block;
-        word-wrap: break-word;
-        position: relative;
-        border: 0.05px solid rgb(218, 218, 218);
-        box-shadow: 0 2px 5px rgb(187, 187, 187);
-        background: white;
-        border-radius: 15px;
-        border-top-left-radius: 0;
-        min-width: 80px;
-        transform:rotateY(180deg);
-        width: 80vw;
-        margin-left: 10%;
+        // display: flex;
+        // justify-self: flex-start;
+        // justify-content: space-evenly;
+        padding: 0;
+        border-radius: 1.8rem;
+        // color: white;
+        // word-wrap: break-word;
+        // max-width: 90%;
+        border-top-right-radius: 0;
+        margin-bottom: 1.5rem;
+        // margin-left: 30%;
+    box-shadow: 0 2px 5px rgb(187, 187, 187);
+        // box-shadow: 0 2px 5px rgb(187, 187, 187);
+        background: rgba(0, 183, 255, 0.486);
+        // float: right;
+        // box-shadow: inset 0 0 20px rgb(255, 175, 64)
+    }
+    .refSent{
+        // border: 2px solid red;
+        width: 100%;
+        text-align: right;
+        color: grey;
+        display: inline-block;
+    font-style: italic;
+    font-size: 12px;
+    margin: 0;
+    align-self: flex-end;
+    // word-wrap: break-word;
+    // position: absolute;
+    // margin-top: 5rem;
+    // margin-bottom: 0;
+    // width: 20rem;
+    // margin-left: 2rem;
+    padding: .8rem;
+    // text-align: right;
     }
     .toFlip{
-        transform:rotateY(180deg);
+        // border: 2px solid green;
+        padding-bottom: 0;
+        display: inline-flex;
+        // padding-right: 5rem;
+        // width: 25rem;
+        align-self: flex-start;
+        padding: 1rem;
+        margin: .5rem;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        -ms-word-break: break-all;
+        word-wrap: break-word;
+        color: black;
+        
+        // text-shadow: 0 0 10px black;    
     }
+    // .msgSent{
+    //     animation: 700ms fadeIn;
+    //     padding-left: 10px;  
+    //     padding-right: 10px;     
+    //     // padding-top: 5px;     
+    //     // padding-bottom: 5px;
+    //     display:block;
+    //     word-wrap: break-word;
+    //     position: relative;
+    //     border: 0.05px solid rgb(218, 218, 218);
+    //     box-shadow: 0 2px 5px rgb(187, 187, 187);
+    //     background: white;
+    //     border-radius: 15px;
+    //     border-top-left-radius: 0;
+    //     min-width: 80px;
+    //     transform:rotateY(180deg);
+    //     width: 80vw;
+    //     margin-left: 10%;
+    // }
+    // .toFlip{
+    //     transform:rotateY(180deg);
+    // }
     .msgReceived{
         padding-left: 10px;  
         padding-right: 10px;     
@@ -166,7 +217,6 @@ page-order-modal {
     .rightSpace{
         // width: 50px;
     }
-
     #commentTXT{
         border: 1px solid rgb(194, 194, 194);
         word-wrap: break-word;
@@ -186,6 +236,4 @@ page-order-modal {
     
     
     //===========================================
-
-
 }

@@ -1,0 +1,32 @@
+<ion-header></ion-header>
+<ion-content class="container">
+    <div class="everything">
+      <div class="logo">
+        <img src="../../assets/imgs/theLogo/ANTZ Logo.png" alt="">
+      </div>
+      <div class="items" padding>
+        <ion-list no-lines>
+          <form class="textFields">
+            <ion-input name="email" #email="ngModel" type="email" placeholder="Email" ngModel required></ion-input>
+            <span *ngIf="!email.valid && email.touched" class="help-block helptext">Please enter email</span>
+            <ion-input name="password" #password="ngModel" type="password" placeholder="Password" ngModel required></ion-input>
+            <span *ngIf="!password.valid && password.touched" class="help-block helptext">Please enter your password</span>
+         
+          </form>
+        </ion-list>
+        <button ion-button block id="button" color="primary" (click)="login(email.value, password.value)">
+          Sign In
+        </button><br>
+        <button ion-button block id="button" color="primary" (click)="explore()">
+            Explore
+          </button>
+        
+        <br><br>
+        <p class="forgot" (click)="forgotpassword()">Forgot password?</p>
+      </div>
+      <p (click)="signup()">Don't have an account?
+        <b class="forgot">Sign Up</b>
+      </p>
+      
+    </div>
+  </ion-content>

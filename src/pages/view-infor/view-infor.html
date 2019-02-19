@@ -5,14 +5,19 @@
 </ion-header>
 <ion-content class="body">
   <div class="image">
-    <div class="client">{{tempName2}}</div>
+
+    <img class="watermark" src="../../assets/imgs/Watermark/WaterMark.png" alt="">
     <img id="wanted" src="{{downloadurl}}">
-    <ion-item no-lines>
-      <ion-avatar item-start>
-        <img src="{{tempdownloadurl}}" alt="">
-      </ion-avatar>
-      <h2>{{tempName}}</h2>
-    </ion-item>
+    <ion-list>
+      <ion-item no-lines>
+        <ion-avatar item-start >
+          <img src="{{tempdownloadurl}}" alt="">
+        </ion-avatar>
+        <h2>{{tempName}}</h2>
+        <p>REF #{{tempName2}}</p>
+      </ion-item>
+    </ion-list>
+  
     <ion-card class="buyer">
       <ion-item class="myName">
         <ion-avatar item-start>
@@ -21,6 +26,7 @@
 
       </ion-item>
     </ion-card>
+
   </div>
   <div padding>
     <ion-list>

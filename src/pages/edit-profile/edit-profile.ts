@@ -38,7 +38,7 @@ export class EditProfilePage implements OnInit {
 
   }
   GoToProfile() {
-    this.navCtrl.setRoot(ProfilePage);
+    this.navCtrl.pop();
   }
   ionViewDidLoad() {
     this.retreivePics1();

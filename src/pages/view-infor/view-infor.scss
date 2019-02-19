@@ -22,13 +22,14 @@ page-view-infor {
         display: flex;
     }
     .client{
-        position: absolute;
-        color: white;
+        // position: absolute;
+        text-align: center;
+        color: black;
         left:50%;
         top: 225px;
-        transform: translate(-50%, -50%);
-        font-size: 200%;
-        text-shadow: 0 0 10px black;     
+        // transform: translate(-50%, -50%);
+        font-size: 100%;
+        // text-shadow: 0 0 10px black;     
     }
     .flexer{
         display: flex;
@@ -93,7 +94,7 @@ page-view-infor {
         // position: relative;
         // border: 0.05px solid rgb(218, 218, 218);
         // box-shadow: 0 2px 5px rgb(187, 187, 187);
-        background: rgba(250, 178, 53, 0.705);
+        background: rgba(250, 178, 53, 0.336);
         border-radius: 15px;
         border-top-left-radius: 0;
         // min-width: 80px;
@@ -119,7 +120,7 @@ page-view-infor {
             // margin-left: 30%;
         box-shadow: 0 2px 5px rgb(187, 187, 187);
             // box-shadow: 0 2px 5px rgb(187, 187, 187);
-            background: rgba(0, 183, 255, 0.486);
+            background: rgba(250, 178, 53, 0.336);
             // box-shadow: inset 0 0 20px rgb(255, 175, 64)
         }
         .refSent{
@@ -141,7 +142,7 @@ page-view-infor {
             word-wrap: break-word;
             -ms-word-break: break-all;
             word-wrap: break-word;
-            color: black;
+            // color: white;
             
             // text-shadow: 0 0 10px black;    
         }
@@ -220,7 +221,7 @@ page-view-infor {
     }
     #wanted{
         width: 100%;
-        max-height: 450px;
+        height: 250px;
         object-fit: cover;
     }
     .rightSpace{
@@ -234,6 +235,16 @@ page-view-infor {
         border-radius: 40px;
         width: 100%;
         padding-left: 10px;
+    }
+    .watermark{
+        position: absolute;
+        top: 50px;
+        z-index: 1;
+        opacity: .3;
+        // width: 80%;
+        // transform: translateY(15%);
+        // transform: translateX(15%)
+        // transform:rotate(30deg);
     }
     .footer{
         // height: 50px;

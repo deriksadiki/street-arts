@@ -102,7 +102,7 @@ export class UploadImagePage {
       this.name == undefined || this.name == null,
       this.description == undefined || this.description == null,
       this.location == undefined || this.location == null,
-      this.price == undefined || this.price == null,
+      this.price == undefined || this.price == null || this.price > 5000 || this.price < 0,
       this.url == '../../assets/default.jpg') {
       const confirm = this.alertCtrl.create({
         title: "Fields Missing",
@@ -119,8 +119,8 @@ export class UploadImagePage {
       confirm.present();
     } else if (this.category == null || this.category == undefined) {
       const confirm = this.alertCtrl.create({
-        title: "category",
-        subTitle: "you did not select the category",
+        title: "Category",
+        subTitle: "You did not select the category",
         buttons: [
           {
             text: 'Ok',
@@ -131,10 +131,10 @@ export class UploadImagePage {
       });
       confirm.present();
     }
-    else if (this.price.length > 11 || this.price.length == "") {
+    else if (this.price > 5000 || this.price < 0 || this.price == " " || this.price == null) {
       const confirm = this.alertCtrl.create({
-        title: "price",
-        subTitle: "the price should not be more than 9999",
+        title: "Price",
+        subTitle: "Please insert a price that is not greater than R5000",
         cssClass: "myAlert",
         buttons: [
           {
@@ -148,7 +148,7 @@ export class UploadImagePage {
     } else if (this.url == '../../assets/default.jpg') {
       const confirm = this.alertCtrl.create({
         // title: "uploadImage",
-        subTitle: "please select a imagine to continue..",
+        subTitle: "Please select a imagine to continue..",
         cssClass: "myAlert",
         buttons: [
           {
@@ -160,10 +160,10 @@ export class UploadImagePage {
       });
       confirm.present();
     }
-    else if (this.location == null || this.location == undefined) {
+    else if (this.name == null || this.location == undefined || this.location == " ") {
       const confirm = this.alertCtrl.create({
-        title: "location",
-        subTitle: "please select a location to continue..",
+        title: "Name",
+        subTitle: "Please select a name to continue..",
         cssClass: "myAlert",
         buttons: [
           {
@@ -175,25 +175,10 @@ export class UploadImagePage {
       });
       confirm.present();
     }
-    else if (this.name == null || this.location == undefined) {
+    else if (this.description == null || this.description == undefined || this.description == " ") {
       const confirm = this.alertCtrl.create({
-        title: "name",
-        subTitle: "please select a name to continue..",
-        cssClass: "myAlert",
-        buttons: [
-          {
-            text: 'Ok',
-            handler: () => {
-            }
-          },
-        ]
-      });
-      confirm.present();
-    }
-    else if (this.description == null || this.description == undefined) {
-      const confirm = this.alertCtrl.create({
-        title: "description",
-        subTitle: "please select a description to continue..",
+        title: "Description",
+        subTitle: "Please select a description to continue..",
         cssClass: "myAlert",
         buttons: [
           {

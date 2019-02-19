@@ -119,7 +119,7 @@ export class ProfilePage {
   }
 
   GoBackToCategory() {
-    this.navCtrl.setRoot(CategoryPage);
+    this.navCtrl.pop();
   }
   getUid() {
     this.art.getUserID().then(data => {

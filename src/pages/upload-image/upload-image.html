@@ -1,4 +1,3 @@
-
 <ion-header>
 
   <ion-toolbar color="secondary">
@@ -37,13 +36,29 @@
         <br>
         <ion-input class="theItem" placeholder="Artwork Name" [(ngModel)]="name" type="text" maxlength="30"></ion-input>
         <br>
-        <ion-input class="theItem" placeholder="Location" type="text" [(ngModel)]="location" maxlength="20" row="4"></ion-input>
+        <ion-item class="theItem">
+          <ion-label>Location</ion-label>
+          <ion-select [(ngModel)]="location">
+            <ion-option value="Johannesburg">Johannesburg</ion-option>
+            <ion-option value="Pretoria">Pretoria</ion-option>
+            <ion-option value="Bloemfontein">Bloemfontein</ion-option>
+            <ion-option value="Pietermaritzburg">Pietermaritzburg</ion-option>
+            <ion-option value="Polokwane">Polokwane</ion-option>
+            <ion-option value="Mahikeng">Mahikeng</ion-option>
+            <ion-option value="eBhisho">eBhisho</ion-option>
+            <ion-option value="Mbombela">Mbombela</ion-option>
+            <ion-option value="Cape Town">Cape Town</ion-option>
+            <ion-option value="Kimberley">Kimberley</ion-option>
+
+          </ion-select>
+        </ion-item>
+        <!-- <ion-input class="theItem" placeholder="Location" type="text" [(ngModel)]="location" maxlength="20" row="4"></ion-input> -->
         <br>
-        <ion-input class="theItem" placeholder="Price (R)" (keypress)="omit_special_char($event)" [(ngModel)]="price" type="number"
-          max="2"></ion-input>
+        <ion-input class="theItem" placeholder="Price (R)" (keypress)="omit_special_char($event)" [(ngModel)]="price"
+          type="number" max="2"></ion-input>
         <br>
-        <ion-textarea placeholder="Art Description (max 150)" [(ngModel)]="description" class="theItem" type="text" maxlength="150"
-          row="4"></ion-textarea>
+        <ion-textarea placeholder="Art Description (max 150)" [(ngModel)]="description" class="theItem" type="text"
+          maxlength="150" row="4"></ion-textarea>
       </div>
     </ion-list>
     <button class="uploadBtn" ion-button full color="primary" (click)="uploadPicture()">Upload Artwork</button>

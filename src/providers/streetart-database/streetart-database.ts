@@ -1396,6 +1396,7 @@ export class StreetartzProvider {
           this.step2Arr.length = 0;
           this.step3Arr.length = 0;
           console.log('direct');
+
           var orders = data.val();
           var keys = Object.keys(orders)
           var artKey;

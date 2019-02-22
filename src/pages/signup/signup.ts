@@ -76,7 +76,7 @@ export class SignupPage {
               text: 'Ok',
               handler: () => {
                 this.art.sendVerificationLink();
-                this.navCtrl.push(CategoryPage)
+                this.navCtrl.push(LoginPage)
               }
             },
           ]

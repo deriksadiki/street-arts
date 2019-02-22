@@ -70,6 +70,7 @@ export class ProfilePage {
             text: 'Resend',
             handler: () => {
               this.art.checkVerificatiom();
+              this.navCtrl.setRoot(LoginPage);
             }
           }
         ]

@@ -26,13 +26,19 @@ import firebase from 'firebase';
   templateUrl: 'login.html',
 })
 export class LoginPage {
+  btn: any;
   email;
   password;
   obj = {} as obj;
   errMsg;
+  pass = 0
+  mail = 0
+
   constructor(public alertCtrl: AlertController, public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController, public viewCtrl: ViewController, public art: StreetartzProvider, public loadingCtrl: LoadingController, public toastCtrl: ToastController) {
   }
   ionViewDidLoad() {
+    this.btn =  <HTMLInputElement>document.getElementById('btSubmit');
+    this.btn.disabled=true
     console.log('ionViewDidLoad LoginPage');
  
   }
@@ -91,5 +97,68 @@ export class LoginPage {
   explore() {
     this.navCtrl.setRoot(CategoryPage);
   }
+
+  getEmailLog(email) {
+    if (email == "" && this.pass == 1) {
+      this.btn.disabled = true;
+      this.mail = 0
+    } else if (email == "" && this.pass == 0) {
+      this.btn.disabled = true;
+      this.mail = 0
+    } else if (email != "" && this.pass == 1) {
+      this.btn.disabled = false;
+      this.mail = 1
+    }
+    else if (email != "" && this.pass == 0) {
+      this.btn.disabled = true;
+      this.mail = 1
+    }
+  }
+  getPassword(password) {
+    console.log(password);
+    // var element = <HTMLInputElement>document.getElementById("btnExcel");
+    console.log(this.mail,  password);
+    if (password == "" && this.mail == 1) {
+      this.btn.disabled = true;
+      this.pass = 0
+      console.log("disabled = true");
+      console.log(this.pass);
+    } else if (password == "" &&  this.mail == 1) {
+      this.pass = 0
+      this.btn.disabled = true;
+      console.log("disabled = true");
+      console.log(this.pass);
+    } else if (password == "" &&  this.mail == 0) {
+      this.pass = 0
+      this.btn.disabled = true;
+      console.log("disabled = true");
+      console.log(this.pass);
+    } else if (password != "" &&  this.mail == 1) {
+      this.pass = 1
+      this.btn.disabled = false;
+      console.log("disabled = false");
+      console.log(this.pass);
+    } else if (password != ""  && this.mail == 0) {
+      this.pass = 1
+      this.btn.disabled = true;
+      console.log("disabled = true");
+      console.log(this.pass);
+    } else if (password != "" &&  this.mail == 1) {
+      this.pass = 1
+      this.btn.disabled = true;
+      console.log("disabled = true");
+      console.log(this.pass);
+    } else if (password != "" && this.mail == 0) {
+      this.pass = 1
+      this.btn.disabled = true;
+      console.log("disabled = true");
+      console.log(this.pass);
+    } else {
+      console.log("disabled = true @ else password");
+      this.btn.disabled = true;
+    }
+
+  }
+
 
 }

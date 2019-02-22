@@ -19,14 +19,24 @@ import { NgForm } from '@angular/forms';
 })
 export class SignupPage {
 
+  btn: any;
   @ViewChild('input') myInput: ElementRef
   fName;
   email;
   password;
   obj = {} as obj;
+
+  pass = 0
+  usrn = 0
+  mail = 0
+
   constructor(public viewCtrl: ViewController, public navCtrl: NavController, public navParams: NavParams, public art: StreetartzProvider, public toastCtrl: ToastController, public alertCtrl: AlertController, public modalCtrl: ModalController, public loadingCtrl: LoadingController) {
   }
   ionViewDidLoad() {
+   this.btn =  <HTMLInputElement>document.getElementById('btSubmit');
+   this.btn.disabled=true
+   console.log( this.btn);
+   
     console.log('ionViewDidLoad SignupPage');
   }
   signUp(fName, email, password) {
@@ -89,6 +99,138 @@ export class SignupPage {
     }
   }
   dismiss() {
-    this.navCtrl.push(LoginPage)
+    this.navCtrl.setRoot(LoginPage)
+    window.location.reload();
+  }
+
+  getEmail(email) {
+
+    console.log(email, this.usrn, this.pass);
+
+    console.log(email);
+    //var element = <HTMLInputElement>document.getElementById("btnExcel");
+    if (email == "" && this.usrn == 1 && this.pass == 1) {
+      this.btn.disabled = true;
+      this.mail = 0
+      console.log("disabled = true");
+      console.log(this.mail);
+    } else if (email == "" && this.usrn == 0 && this.pass == 1) {
+      this.mail = 0
+      console.log("disabled = true");
+      this.btn.disabled = true;
+      console.log(this.mail);
+    } else if (email == "" && this.usrn == 1 && this.pass == 0) {
+      this.mail = 0
+      console.log("disabled = true");
+      console.log(this.mail);
+    } else if (email != "" && this.usrn == 1 && this.pass == 1) {
+      this.mail = 1
+      console.log("disabled = false");
+      this.btn.disabled = false;
+      console.log(this.mail);
+    } else if (email != "" && this.usrn == 1 && this.pass == 0) {
+      this.mail = 1
+      this.btn.disabled = true;
+      console.log("disabled = true");
+      console.log(this.mail);
+    } else if (email != "" && this.usrn == 0 && this.pass == 1) {
+      this.mail = 1
+      this.btn.disabled = true;
+      console.log("disabled = true");
+      console.log(this.mail);
+    } else if (email != "" && this.usrn == 0 && this.pass == 0) {
+      this.mail = 1
+      this.btn.disabled = true;
+      console.log("disabled = true");
+      console.log(this.mail);
+    } else {
+      console.log("disabled = true @ else email");
+      this.btn.disabled = true;
+    }
+  }
+  getPassword(password) {
+    console.log(password);
+    // var element = <HTMLInputElement>document.getElementById("btnExcel");
+    console.log(this.mail, this.usrn, password);
+    if (password == "" && this.usrn == 1 && this.mail == 1) {
+      this.btn.disabled = true;
+      this.pass = 0
+      console.log("disabled = true");
+    } else if (password == "" && this.usrn == 0 && this.mail == 1) {
+      this.pass = 0
+      this.btn.disabled = true;
+      console.log("disabled = true");
+    } else if (password == "" && this.usrn == 1 && this.mail == 0) {
+      this.pass = 0
+      this.btn.disabled = true;
+      console.log("disabled = true");
+    } else if (password != "" && this.usrn == 1 && this.mail == 1) {
+      this.pass = 1
+      this.btn.disabled = false;
+      console.log("disabled = false");
+    } else if (password != "" && this.usrn == 1 && this.mail == 0) {
+      this.pass = 1
+      this.btn.disabled = true;
+      console.log("disabled = true");
+    } else if (password != "" && this.usrn == 0 && this.mail == 1) {
+      this.pass = 1
+      this.btn.disabled = true;
+      console.log("disabled = true");
+    } else if (password != "" && this.usrn == 0 && this.mail == 0) {
+      this.pass = 1
+      this.btn.disabled = true;
+      console.log("disabled = true");
+    } else {
+      console.log("disabled = true @ else password");
+      this.btn.disabled = true;
+    }
+
+  }
+
+  getUsername(username) {
+    //var element = <HTMLInputElement>document.getElementById("btnExcel");
+    //puppies = reg and kittens = log
+    console.log(this.mail, username, this.pass);
+    if (username == "" && this.pass == 1 && this.mail == 1) {
+      this.btn.disabled = true;
+      this.usrn = 0
+      console.log("disabled = true");
+      console.log(this.usrn);
+    } else if (username == "" && this.pass == 0 && this.mail == 1) {
+      this.usrn = 0
+      this.btn.disabled = true;
+      console.log("disabled = true");
+      console.log(this.usrn);
+    } else if (username == "" && this.pass == 1 && this.mail == 0) {
+      this.usrn = 0
+      this.btn.disabled = true;
+      console.log("disabled = true");
+      console.log(this.usrn);
+    } else if (username != "" && this.pass == 1 && this.mail == 1) {
+      this.usrn = 1
+      this.btn.disabled = false;
+      console.log("disabled = false");
+      console.log(this.usrn);
+    } else if (username != "" && this.pass == 1 && this.mail == 0) {
+      this.usrn = 1
+      this.btn.disabled = true;
+      console.log("disabled = true");
+      console.log(this.usrn);
+    } else if (username != "" && this.pass == 0 && this.mail == 1) {
+      this.usrn = 1
+      this.btn.disabled = true;
+      console.log("disabled = true");
+      console.log(this.usrn);
+    } else if (username != "" && this.pass == 0 && this.mail == 0) {
+      this.usrn = 1
+      this.btn.disabled = true;
+      console.log("disabled = true");
+      console.log(this.usrn);
+    } else {
+      console.log("disabled = true @ else username");
+      this.btn.disabled = true;
+    }
+
+
   }
 }

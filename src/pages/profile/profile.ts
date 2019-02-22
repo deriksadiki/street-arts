@@ -45,7 +45,9 @@ export class ProfilePage {
       let details = data.val();
       console.log(data.val());
       this.arr.push(details);
-    })
+    });
+    console.log("Hello Profile Page");
+    
   }
 
   ionViewDidLoad() {

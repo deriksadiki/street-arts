@@ -104,6 +104,9 @@ page-upload-image {
         max-width: 500px;
         margin: 0 auto;
     }
+    .body{
+        // transform: translateY(5%)
+    }
     @media screen and (min-width: 550px){
         .container{
             background: linear-gradient(#011127, #01112700);
@@ -112,7 +115,7 @@ page-upload-image {
             padding-top: 50%;
         }
         .body{
-            transform: translateY(-30%)
+            transform: translateY(5%)
         }
     ion-item{
         width: 100%;
@@ -123,5 +126,6 @@ page-upload-image {
     #backBTN{
         font-size: 26px;
         padding-left: 10px;
+        font-weight: bold;
     }
 }

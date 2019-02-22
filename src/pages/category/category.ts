@@ -38,6 +38,8 @@ export class CategoryPage {
   verified;
   constructor(private ngZone: NgZone, private modalCtrl: ModalController, public navCtrl: NavController, public navParams: NavParams, public art: StreetartzProvider, public alertCtrl: AlertController, public loadingCtrl: LoadingController, public toastCtrl: ToastController, public appCtrl: App, public network: Network) {
     this.retreivePics();
+    
+    
   }
   GoToProfilePage() {
     this.art.checkstate().then((data: any) => {
